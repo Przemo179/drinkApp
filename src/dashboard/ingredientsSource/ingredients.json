@@ -1,0 +1,120 @@
+{
+    "ingredientsList": [
+        {
+            "label": "Vodka",
+            "unit": "ml"
+        },
+        {
+            "label": "Rum",
+            "unit": "ml"
+        },
+        {
+            "label": "Orange juice",
+            "unit": "ml"
+        },
+        {
+            "label": "Pineapple juice",
+            "unit": "ml"
+        },
+        {
+            "label": "Passoa",
+            "unit": "ml"
+        },
+        {
+            "label": "Passion fruit syrup",
+            "unit": "ml"
+        },
+        {
+            "label": "Lemon juice",
+            "unit": "ml"
+        },
+        {
+            "label": "Cranberries juice",
+            "unit": "ml"
+        },
+        {
+            "label": "Gin",
+            "unit": "ml"
+        },
+        {
+            "label": "Tequila",
+            "unit": "ml"
+        },
+        {
+            "label": "Triple Sec",
+            "unit": "ml"
+        },
+        {
+            "label": "Melon Liqueur",
+            "unit": "ml"
+        },
+        {
+            "label": "Sweet & Sour",
+            "unit": "ml"
+        },
+        {
+            "label": "Splash Lemon-Lime Soda",
+            "unit": "ml"
+        },
+        {
+            "label": "Lemon",
+            "unit": "piece"
+        },
+        {
+            "label": "Cherry",
+            "unit": "piece"
+        },
+        {
+            "label": "Archers",
+            "unit": "ml"
+        },
+        {
+            "label": "Coconout syrup (Malibu)",
+            "unit": "ml"
+        },
+        {
+            "label": "TCampari",
+            "unit": "ml"
+        },
+        {
+            "label": "White rum",
+            "unit": "ml"
+        },
+        {
+            "label": "Simple Syrup",
+            "unit": "ml"
+        },
+        {
+            "label": "Salt",
+            "unit": "g"
+        },
+        {
+            "label": "Cointreau",
+            "unit": "ml"
+        },
+        {
+            "label": "Dash bitters Orange",
+            "unit": "ml"
+        },
+        {
+            "label": "Midori",
+            "unit": "ml"
+        },
+        {
+            "label": "Egg",
+            "unit": "piece"
+        },
+        {
+            "label": "Apple juice",
+            "unit": "ml"
+        },
+        {
+            "label": "Amaretto",
+            "unit": "ml"
+        },
+        {
+            "label": "Grenadine syrup",
+            "unit": "ml"
+        }
+    ]
+}

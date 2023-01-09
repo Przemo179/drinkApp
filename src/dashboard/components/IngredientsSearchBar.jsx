@@ -1,18 +1,10 @@
 import React, { useState, useEffect} from 'react';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import 'bootstrap/dist/css/bootstrap.css';
-import {connect} from "react-redux";
-import {ApplicationState} from "../../store/rootReducer";
-import {Ingredient} from "../types/types";
-import {addIngredient} from "../redux/actions/actions";
+import { connect } from "react-redux";
+import { addIngredient } from "../redux/actions/actions";
 import data from '../ingredientsSource/ingredients.json';
 
-// const StateProps = {
-//     ingredients: Ingredient
-// }
-// const DispatchProps = {
-//     addIngredient: addIngredient
-// }
 
 let nextArrayId = 0;
 const tempArray = [];

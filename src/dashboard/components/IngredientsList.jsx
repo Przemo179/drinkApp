@@ -2,17 +2,17 @@
 // Bootstrap
 import { Table } from 'react-bootstrap';
 import { Container } from "react-bootstrap";
-import {Ingredient} from "../types/types";
-import {addIngredient} from "../redux/actions/actions";
+import { removeIngredient } from "../redux/actions/actions";
 import {connect} from "react-redux";
 import { IngredientRow } from './IngredientRow';
 
-const ProductsList = ({ingredients, addIngredient}) => {
+const ProductsList = ({ingredients, removeIngredient}) => {
 
-    const deleteRow = () =>{
-        console.log("123");
+    const handleClick = (event, id) => {
+        removeIngredient({
+            id
+        })
     }
-
     if(ingredients[0] !== undefined){
         return(
             <Container>
@@ -29,10 +29,10 @@ const ProductsList = ({ingredients, addIngredient}) => {
                         {ingredients.map((ingredient) => (
                             <IngredientRow 
                                 id={ingredient.payload.id}
-                                columnIterator={ingredient.payload.id + 1} 
+                                columnIterator={ingredient.payload.id + 1}
                                 label={ingredient.payload.label} 
                                 unit={ingredient.payload.unit}
-                                click={deleteRow()}
+                                handleClick={handleClick}
                             />
                         ))}
                     </tbody>
@@ -41,7 +41,6 @@ const ProductsList = ({ingredients, addIngredient}) => {
 
         )
     }
-
     return(
         <a>Your ingredient list is empty!</a>
     )
@@ -51,6 +50,6 @@ export default connect(
     (state) => ({
         ingredients: state.ingredients.ingredientsList,
     }), {
-        addIngredient: addIngredient
+        removeIngredient: removeIngredient
     }
 )(ProductsList);

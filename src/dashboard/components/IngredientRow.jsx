@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen, faTrashCan } from '@fortawesome/free-solid-svg-icons';
-import '../css files/IngredientRows.css';
-import { UpdateValue } from './ChangingAmountOf';
+import '../../css files/IngredientRows.css'
+import { UpdateValue } from './UpdateAmountOf';
 
 export const IngredientRow = ({id, payload, removeFromStore, setChangeValue, changeValue}) => {   
     console.log(id);

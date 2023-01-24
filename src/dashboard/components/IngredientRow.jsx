@@ -3,26 +3,36 @@ import { faPen, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import '../../css files/IngredientRows.css'
 import { UpdateValue } from './UpdateAmountOf';
 
-export const IngredientRow = ({id, payload, removeFromStore, setChangeValue, changeValue}) => {   
-    console.log(id);
-    console.log(payload.label);
+export const IngredientRow = ({
+                                id, 
+                                payload, 
+                                removeFromStore, 
+                                changeValueOfSingleIngr,
+                                cancelChanging,
+                                setChangeValue, 
+                                updateValueChange,
+                                changeValue}) => {   
     return (
         <tr key={id}>
             <td>{id + 1}</td>
             <td>{payload.label}</td>
             <td key={payload.id}>
+                
                 {changeValue && changeValue && payload.id == changeValue.id ? (
                     <UpdateValue
+                        changeValueOfSingleIngr = {changeValueOfSingleIngr}
+                        updateValueChange = {updateValueChange}
+                        cancelChanging = {cancelChanging}
+                        changeValue = {changeValue}
                     />
                 ) : (
                     <div className='iconsWrap'>
                     {payload.amountOf}
                     {payload.unit}
                     <span title="Edit"
-                        onClick={() => setChangeValue({
+                        onClick={(e) => setChangeValue({
                             id: payload.id,
-                            label: payload.label,
-                            unit: payload.unit,
+                            amountOf: e.target.value,
                             })
                         }
                     >

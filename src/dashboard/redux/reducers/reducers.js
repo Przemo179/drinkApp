@@ -19,7 +19,17 @@ const ingredientsReducer = (state = initialState, action) => {
                         ]
                     }
         case UPDATE_AMOUNTOF:
-            return {}
+            console.log(state);
+            return {...state,
+                ingredientsList: state.ingredientsList.map((ingredient) => {
+                    console.log(ingredient.payload);
+                    if(ingredient.payload.id === action.payload.id) {
+                        return {...ingredient, amountOf: action.payload.amountOf};
+                    } else {
+                        return ingredient;
+                    }
+                })
+            }
         default:
             return state;
     }

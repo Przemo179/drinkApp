@@ -7,7 +7,7 @@ import {connect} from "react-redux";
 import { IngredientRow } from './IngredientRow';
 import '../../css files/IngredientRows.css'
 
-const ProductsList = ({ingredients, removeIngredient}) => {
+const ProductsList = ({ingredients, removeIngredient, updateAmountOf}) => {
 
     const [changeValue, setChangeValue] = useState('');
 
@@ -17,9 +17,25 @@ const ProductsList = ({ingredients, removeIngredient}) => {
         })
     }
 
-    // const changeData = () => {
-    //     console.log('xd');
-    // }
+    const changeValueOfSingleIngr = (inputValue) => {
+        console.log(inputValue);
+        setChangeValue({
+            id: changeValue.id,
+            amountOf: parseFloat(inputValue),
+        });
+    }
+
+    const cancelChanging = () => {
+        setChangeValue('');
+    }
+
+    const updateValueChange = () => {
+        updateAmountOf({
+            id: changeValue.id,
+            amountOf : changeValue.amountOf
+        })
+        setChangeValue('');
+    }
 
     if(ingredients[0] !== undefined){
         return(
@@ -35,12 +51,15 @@ const ProductsList = ({ingredients, removeIngredient}) => {
                     </thead>
                     <tbody>
                         {ingredients.map((ingredient, id) => (
-                            <IngredientRow 
+                            <IngredientRow
                                 id = {id}
                                 payload =  {ingredient.payload} 
                                 removeFromStore={removeFromStore}
                                 setChangeValue = {setChangeValue}
                                 changeValue = {changeValue}
+                                changeValueOfSingleIngr = {changeValueOfSingleIngr}
+                                cancelChanging = {cancelChanging}
+                                updateValueChange = {updateValueChange}
                             />
                         ))}
                     </tbody>

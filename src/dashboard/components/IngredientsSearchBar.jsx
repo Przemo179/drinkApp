@@ -19,7 +19,7 @@ const IngredientsSearchBar = ({ingredients, addIngredient}) => {
             addIngredient({
                 id: nextArrayId++,
                 label: selectedValue[0].label,
-                amountOf : 0,
+                amountOf : 0.0,
                 unit: selectedValue[0].unit,
             });
             tempArray.push(selectedValue[0].label)

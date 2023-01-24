@@ -4,11 +4,9 @@ import '../css files/IngredientRows.css';
 import { UpdateValue } from './ChangingAmountOf';
 
 export const IngredientRow = ({id, payload, removeFromStore, setChangeValue, changeValue}) => {   
-    console.log(id);
-    console.log(payload.label);
     return (
         <tr key={id}>
-            <td>{payload.id + 1}</td>
+            <td>{id + 1}</td>
             <td>{payload.label}</td>
             <td key={payload.id}>
                 {changeValue && changeValue && payload.id == changeValue.id ? (

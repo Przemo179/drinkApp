@@ -1,21 +1,29 @@
-// import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect} from 'react';
 // Bootstrap
 import { Table } from 'react-bootstrap';
 import { Container } from "react-bootstrap";
-import { removeIngredient } from "../redux/actions/actions";
+import { removeIngredient, updateAmountOf } from "../redux/actions/actions";
 import {connect} from "react-redux";
 import { IngredientRow } from './IngredientRow';
+import '../css files/IngredientRows.css';
 
 const ProductsList = ({ingredients, removeIngredient}) => {
 
-    const handleClick = (event, id) => {
+    const [changeValue, setChangeValue] = useState('');
+
+    const removeFromStore = (id) => {
         removeIngredient({
-            id
+            id : id
         })
     }
+
+    // const changeData = () => {
+    //     console.log('xd');
+    // }
+
     if(ingredients[0] !== undefined){
         return(
-            <Container>
+            <Container className='tableOfIng'>
                 <Table striped bordered hover>
                     <thead>
                         <tr>
@@ -28,11 +36,10 @@ const ProductsList = ({ingredients, removeIngredient}) => {
                     <tbody>
                         {ingredients.map((ingredient) => (
                             <IngredientRow 
-                                id={ingredient.payload.id}
-                                columnIterator={ingredient.payload.id + 1}
-                                label={ingredient.payload.label} 
-                                unit={ingredient.payload.unit}
-                                handleClick={handleClick}
+                                payload =  {ingredient.payload} 
+                                removeFromStore={removeFromStore}
+                                setChangeValue = {setChangeValue}
+                                changeValue = {changeValue}
                             />
                         ))}
                     </tbody>
@@ -50,6 +57,7 @@ export default connect(
     (state) => ({
         ingredients: state.ingredients.ingredientsList,
     }), {
-        removeIngredient: removeIngredient
+        removeIngredient: removeIngredient,
+        updateAmountOf: updateAmountOf,
     }
 )(ProductsList);

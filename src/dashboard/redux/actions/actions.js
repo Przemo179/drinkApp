@@ -1,5 +1,5 @@
 import { Ingredient } from "../../types/types";
-import { ADD_INGREDIENT, REMOVE_INGREDIENT } from "../constants/constants";
+import { ADD_INGREDIENT, REMOVE_INGREDIENT, UPDATE_AMOUNTOF } from "../constants/constants";
 
 
 export const addIngredient = (
@@ -14,3 +14,8 @@ export const removeIngredient = (
     payload
 });
 
+export const updateAmountOf = (
+    payload) => ({
+        type: UPDATE_AMOUNTOF,
+        payload
+});

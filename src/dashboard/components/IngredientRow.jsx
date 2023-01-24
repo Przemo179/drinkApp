@@ -1,17 +1,42 @@
-export const IngredientRow = ({id, columnIterator, label, unit, handleClick}) => {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPen, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import '../css files/IngredientRows.css';
+import { UpdateValue } from './ChangingAmountOf';
 
-    return (    
+export const IngredientRow = ({id, payload, removeFromStore, setChangeValue, changeValue}) => {   
+    console.log(id);
+    console.log(payload.label);
+    return (
         <tr key={id}>
-            <td>{columnIterator}</td>
-            <td>{label}</td>
-            <td>
-                <form>
-                    <input type="number" min='0' max='1000' id={id}/>
-                    {unit}
-                </form>
+            <td>{payload.id + 1}</td>
+            <td>{payload.label}</td>
+            <td key={payload.id}>
+                {changeValue && changeValue && payload.id == changeValue.id ? (
+                    <UpdateValue
+                    />
+                ) : (
+                    <div className='iconsWrap'>
+                    {payload.amountOf}
+                    {payload.unit}
+                    <span title="Edit"
+                        onClick={() => setChangeValue({
+                            id: payload.id,
+                            label: payload.label,
+                            unit: payload.unit,
+                            })
+                        }
+                    >
+                        <FontAwesomeIcon icon={faPen} />
+                    </span>
+                </div>
+                )}
             </td>
-            <td>
-                <button type="button" className="btn btn-danger" onClick={event => handleClick(event, id)}>X</button>
+            <td className='span1'>
+                <div className='iconsWrap'>
+                    <span title="Delete" onClick={() => removeFromStore(id)}> 
+                        <FontAwesomeIcon icon={faTrashCan} />
+                    </span>
+                </div>
             </td>
         </tr>
     )

@@ -1,0 +1,29 @@
+body {
+  margin: 10px;
+}
+
+.iconsWrap span {
+    display: inline-block;
+    margin: 0 10px 10px;
+    cursor: pointer;
+    color: black;
+}
+  
+.iconsWrap span:hover {
+    display: inline-block;
+    margin: 0 10px 10px;
+    cursor: pointer;
+    color: lightgreen;
+}
+
+
+.tableOfIng {
+  margin-top: 15px;
+  margin-left: 0px;
+  margin-bottom: 10px;
+}
+
+.valueInput {
+  display: flex;
+  align-items: center;  
+}

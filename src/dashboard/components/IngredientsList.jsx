@@ -34,9 +34,8 @@ const ProductsList = ({ingredients, removeIngredient}) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {ingredients.map((ingredient, id) => (
+                        {ingredients.map((ingredient) => (
                             <IngredientRow 
-                                id = {id}
                                 payload =  {ingredient.payload} 
                                 removeFromStore={removeFromStore}
                                 setChangeValue = {setChangeValue}

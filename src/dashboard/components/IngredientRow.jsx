@@ -3,10 +3,12 @@ import { faPen, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import '../css files/IngredientRows.css';
 import { UpdateValue } from './ChangingAmountOf';
 
-export const IngredientRow = ({id, payload, removeFromStore, setChangeValue, changeValue}) => {   
+export const IngredientRow = ({payload, removeFromStore, setChangeValue, changeValue}) => {   
+    console.log(id);
+    console.log(payload.label);
     return (
-        <tr key={id}>
-            <td>{id + 1}</td>
+        <tr key={payload.id}>
+            <td>{payload.id + 1}</td>
             <td>{payload.label}</td>
             <td key={payload.id}>
                 {changeValue && changeValue && payload.id == changeValue.id ? (
@@ -31,7 +33,7 @@ export const IngredientRow = ({id, payload, removeFromStore, setChangeValue, cha
             </td>
             <td className='span1'>
                 <div className='iconsWrap'>
-                    <span title="Delete" onClick={() => removeFromStore(id)}> 
+                    <span title="Delete" onClick={() => removeFromStore(payload.id)}> 
                         <FontAwesomeIcon icon={faTrashCan} />
                     </span>
                 </div>

@@ -18,7 +18,6 @@ const ProductsList = ({ingredients, removeIngredient, updateAmountOf}) => {
     }
 
     const changeValueOfSingleIngr = (inputValue) => {
-        console.log(inputValue);
         setChangeValue({
             id: changeValue.id,
             amountOf: parseFloat(inputValue),
@@ -30,10 +29,17 @@ const ProductsList = ({ingredients, removeIngredient, updateAmountOf}) => {
     }
 
     const updateValueChange = () => {
-        updateAmountOf({
-            id: changeValue.id,
-            amountOf : changeValue.amountOf
-        })
+        if(changeValue.amountOf == undefined)   {
+            updateAmountOf({
+                id: changeValue.id,
+                amountOf : 0
+            });
+        } else  {
+            updateAmountOf({
+                id: changeValue.id,
+                amountOf : changeValue.amountOf
+            });
+        }
         setChangeValue('');
     }
 
@@ -53,7 +59,7 @@ const ProductsList = ({ingredients, removeIngredient, updateAmountOf}) => {
                         {ingredients.map((ingredient, id) => (
                             <IngredientRow
                                 id = {id}
-                                payload =  {ingredient.payload} 
+                                ingredient =  {ingredient} 
                                 removeFromStore={removeFromStore}
                                 setChangeValue = {setChangeValue}
                                 changeValue = {changeValue}

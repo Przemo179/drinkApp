@@ -5,20 +5,21 @@ import { UpdateValue } from './UpdateAmountOf';
 
 export const IngredientRow = ({
                                 id, 
-                                payload, 
+                                ingredient, 
                                 removeFromStore, 
                                 changeValueOfSingleIngr,
                                 cancelChanging,
-                                setChangeValue, 
                                 updateValueChange,
-                                changeValue}) => {   
+                                changeValue,
+                                setChangeValue}) => {   
+                                    
     return (
         <tr key={id}>
             <td>{id + 1}</td>
-            <td>{payload.label}</td>
-            <td key={payload.id}>
-                
-                {changeValue && changeValue && payload.id == changeValue.id ? (
+            <td>{ingredient.label}</td>
+            <td key={ingredient.id}>
+
+                {changeValue && changeValue && ingredient.id == changeValue.id ? (
                     <UpdateValue
                         changeValueOfSingleIngr = {changeValueOfSingleIngr}
                         updateValueChange = {updateValueChange}
@@ -27,11 +28,11 @@ export const IngredientRow = ({
                     />
                 ) : (
                     <div className='iconsWrap'>
-                    {payload.amountOf}
-                    {payload.unit}
+                    {ingredient.amountOf}
+                    {ingredient.unit}
                     <span title="Edit"
                         onClick={(e) => setChangeValue({
-                            id: payload.id,
+                            id: ingredient.id,
                             amountOf: e.target.value,
                             })
                         }

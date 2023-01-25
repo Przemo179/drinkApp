@@ -7,6 +7,7 @@ export const UpdateValue = ({
     <div className="xd row">
         <div className="col">
             <input
+            min={0} max={1000}
             value={ changeValue && changeValue.amountOf }
             onChange={(e) => changeValueOfSingleIngr(e.target.value)}
             className="valueInput"

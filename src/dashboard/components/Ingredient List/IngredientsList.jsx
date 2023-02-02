@@ -1,11 +1,11 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState} from 'react';
 // Bootstrap
 import { Table } from 'react-bootstrap';
 import { Container } from "react-bootstrap";
-import { removeIngredient, updateAmountOf } from "../redux/actions/actions";
+import { removeIngredient, updateAmountOf } from "../../redux/actions/actions";
 import {connect} from "react-redux";
 import { IngredientRow } from './IngredientRow';
-import '../../css files/IngredientRows.css'
+import '../../../css files/IngredientList.css'
 
 const ProductsList = ({ingredients, removeIngredient, updateAmountOf}) => {
 
@@ -18,10 +18,12 @@ const ProductsList = ({ingredients, removeIngredient, updateAmountOf}) => {
     }
 
     const changeValueOfSingleIngr = (inputValue) => {
-        setChangeValue({
-            id: changeValue.id,
-            amountOf: parseFloat(inputValue),
-        });
+        if(inputValue <= 1000) {
+            setChangeValue({
+                id: changeValue.id,
+                amountOf: parseFloat(inputValue),
+            });
+        }
     }
 
     const cancelChanging = () => {
@@ -29,11 +31,8 @@ const ProductsList = ({ingredients, removeIngredient, updateAmountOf}) => {
     }
 
     const updateValueChange = () => {
-        if(changeValue.amountOf == undefined)   {
-            updateAmountOf({
-                id: changeValue.id,
-                amountOf : 0
-            });
+        if(changeValue.amountOf === undefined)   {
+            setChangeValue('');
         } else  {
             updateAmountOf({
                 id: changeValue.id,
@@ -46,7 +45,7 @@ const ProductsList = ({ingredients, removeIngredient, updateAmountOf}) => {
     if(ingredients[0] !== undefined){
         return(
             <Container className='tableOfIng'>
-                <Table striped bordered hover>
+                <Table variant='dark' bordered hover>
                     <thead>
                         <tr>
                             <th>#</th>

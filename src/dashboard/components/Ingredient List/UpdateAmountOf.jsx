@@ -4,7 +4,7 @@ export const UpdateValue = ({
                             updateValueChange,
                             changeValue }) => ( 
 
-    <div className="xd row">
+    <div className="row">
         <div className="col">
             <input
             min={0} max={1000}
@@ -12,13 +12,14 @@ export const UpdateValue = ({
             onChange={(e) => changeValueOfSingleIngr(e.target.value)}
             className="valueInput"
                 type='number'
-            />
+            placeholder="Enter value between 0-1000"
+            />       
         </div>
         <div className="col-auto">
         <button 
             onClick={updateValueChange}
             className='btn btn-success'
-            >Update task</button> 
+            >Update value</button> 
         <button
             onClick={cancelChanging}
             className='btn btn-warning'

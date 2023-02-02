@@ -73,7 +73,7 @@
             "unit": "ml"
         },
         {
-            "label": "TCampari",
+            "label": "Campari",
             "unit": "ml"
         },
         {
@@ -114,6 +114,26 @@
         },
         {
             "label": "Grenadine syrup",
+            "unit": "ml"
+        },
+        {
+            "label": "Aperol",
+            "unit": "ml"
+        },
+        {
+            "label": "Orange vodka",
+            "unit": "ml"
+        },
+        {
+            "label": "Citrus vodka",
+            "unit": "ml"
+        },
+        {
+            "label": "Honey liqueur",
+            "unit": "ml"
+        },
+        {
+            "label": "Lime juice",
             "unit": "ml"
         }
     ]

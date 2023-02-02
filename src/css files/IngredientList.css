@@ -1,19 +1,15 @@
-body {
-    margin: 10px;
-  }
-  
-  .iconsWrap span {
+ .iconsWrap span {
       display: inline-block;
       margin: 0 10px 10px;
       cursor: pointer;
-      color: black;
+      color: white;
   }
     
   .iconsWrap span:hover {
       display: inline-block;
       margin: 0 10px 10px;
       cursor: pointer;
-      color: lightgreen;
+      color: green;
   }
   
   
@@ -24,6 +20,7 @@ body {
   }
   
   .valueInput {
+    width: 100%;
     display: flex;
     align-items: center;  
   }

@@ -1,0 +1,55 @@
+{
+    "drinksList": [
+        {
+            "name": "Yellowhammer",
+            "compositions" : [
+                "Vodka", "Rum", "Amaretto", "Pineapple juice"
+            ],
+            "proportions" : [
+                60, 60, 60, 120
+            ],
+            "photo": "../../../png files/drink photos/yellowhammer.png"
+        },
+        {
+            "name": "Wilno Avenue",
+            "compositions" : [
+                "Vodka", "Passoa", "Passion fruit syrup", "Lemon juice", "Cranberries juice"
+            ],
+            "proportions" : [
+                40, 20, 10, 20, 80
+            ],
+            "photo": "../../../png files/drink photos/yellowhammer.png"
+        },
+        {
+            "name": "Tokyo iced tea",
+            "compositions" : [
+                "Vodka", "Rum", "Gin", "Tequila", "Triple Sec", 
+                "Melon Liqueur", "Sweet & Sour", "Splash Lemon-Lime Soda", "Cheery"
+            ],
+            "proportions" : [
+                15,15,15,15,15,15,30,10,1
+            ],
+            "photo": "../../../png files/drink photos/yellowhammer.png"
+        },
+        {
+            "name": "Sex on the Beach",
+            "compositions" : [
+                "Vodka", "Archers", "Coconout syrup (Malibu)", "Orange juice", "Cranberries juice"
+            ],
+            "proportions" : [
+                40, 20, 20, 50, 1
+            ],
+            "photo": "../../../png files/drink photos/yellowhammer.png"
+        },
+        {
+            "name": "Salty Bird",
+            "compositions" : [
+                "White rum", "Campari", "Pineapple juice", "Lime juice", "Simple Syrup", "Salt"
+            ],
+            "proportions" : [
+                45, 22.5, 45, 15, 15, 1
+            ],
+            "photo": "../../../png files/drink photos/yellowhammer.png"
+        }
+    ]
+}

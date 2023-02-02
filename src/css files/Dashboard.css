@@ -1,6 +1,6 @@
 body {
     margin: 0.3% 1% 0.5% 1%;
-    background-image: url('../png\ files/background.png');
+    background-image: url('../png\ files/back_3.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -23,7 +23,7 @@ body {
     background-color: #212529;
     color: #ced4da;
     border: 2px solid #ced4da;
-    padding: 0.3rem 0.6rem;
+    padding: 0.3rem;
 }
 
 .form-control div.dropdown-menu {

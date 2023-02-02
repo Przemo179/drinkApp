@@ -15,7 +15,7 @@
   
   .tableOfIng {
     margin-top: 15px;
-    margin-left: 0px;
+    /* margin-left: 0px; */
     margin-bottom: 10px;
   }
   
@@ -24,3 +24,24 @@
     display: flex;
     align-items: center;  
   }
+
+.tableOfIng table.table-dark {
+  --bs-table-color: #ced4da;
+    --bs-table-bg: #212529;
+    --bs-table-border-color:  #ced4da;
+    --bs-table-striped-bg: #292921;
+    --bs-table-striped-color: #fff;
+    --bs-table-active-bg: #373b3e;
+    --bs-table-active-color: #fff;
+    --bs-table-hover-bg: #323539;
+    --bs-table-hover-color: #fff;
+    color: var(--bs-table-color);
+    border-color: var(--bs-table-border-color);
+}
+
+.tableOfIng table.table-dark th{
+  font-weight: bold;
+  border: 2px solid;
+  color: #212529;
+  background-color: #ced4da;
+}

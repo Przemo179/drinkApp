@@ -51,7 +51,7 @@ const ProductsList = ({ingredients, removeIngredient, updateAmountOf}) => {
                             <th>#</th>
                             <th>Name</th>
                             <th>Amount of</th>
-                            <th></th>
+                            <th>Del</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -8,7 +8,7 @@
             "proportions" : [
                 60, 60, 60, 120
             ],
-            "photo": "../../../png files/drink photos/yellowhammer.png"
+            "photo": "../src/png files/drink photos/yellowhammer.png"
         },
         {
             "name": "Wilno Avenue",

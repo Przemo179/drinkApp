@@ -20,8 +20,9 @@ const RecipePane = ({visible, data, closePanel}) => {
             onRequestClose={closePanel}
         >
             <div className='xxx'>
-                <div className='xxx__zdjecie'>
-                    <img src={data && data.photo ? data.photo : 'there is not photo'}/>
+                {/* <div className='xxx__zdjecie'> */}
+                <div>
+                    <img src={data && data.photo ? data.photo : 'there is not photo'} alt="kurwa"/>
                 </div>
                 <div className='xxx__skladniki'>
                     <div className='xxx__skladniki--box'>

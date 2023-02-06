@@ -27,20 +27,21 @@ const DrinkList = ({ingredients}) => {
         setDrinkDetails({visible: false});
     }
 
-    // const availableIngredientsInDrink = [];
-    // 
-    // const xd = () => {
-    //     ingredients.forEach(ingredient => {
-    //         data.drinksList.forEach(drink => {
-    //             drink.compositions.forEach(composition => {
-    //                 if(composition===ingredient.label){
-    //                     console.log(composition);
-    //                 };
-    //             })
-    //         })
-    //     })
-    //     console.log(availableIngredientsInDrink);
-    // }
+    const availableIngredientsInDrink = [];
+    
+    const xd = () => {
+        ingredients.forEach(ingredient => {
+            data.drinksList.forEach(drink => {
+                drink.compositions.forEach(composition => {
+                    if(composition===ingredient.label){
+                        console.log(composition);
+                    };
+                })
+            })
+        })
+        console.log(availableIngredientsInDrink);
+    }
+    if(ingredients[0] !== undefined) {
     return (
         <Container>
             <RecipePane
@@ -79,6 +80,9 @@ const DrinkList = ({ingredients}) => {
             </Table>
         </Container>
     ) 
+    } else {
+        return;
+    }
 }
 
 export default connect(

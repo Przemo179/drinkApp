@@ -9,19 +9,22 @@ import '../../css files/Dashboard.css'
 let nextArrayId = 0;
 const tempArray = [];
 
-const IngredientsSearchBar = ({addIngredient}) => {
+const IngredientsSearchBar = ({ingredients, addIngredient}) => {
     const [selectedItem, setSelectedItem] = useState([]); // selectedItem is used for "cleaning input"
     const addSingleIngredient = (name) => (selectedValue) =>{
-        if(tempArray.indexOf(selectedValue[0].label) === -1)    {
-            tempArray.push(selectedValue[0].label)
+        console.log(nextArrayId);
+      
+        if (ingredients.every(ingredient => {
+            return ingredient.label !== selectedValue[0].label;
+            })
+        ) {
             addIngredient({
                 id: nextArrayId++,
                 label: selectedValue[0].label,
                 unit: selectedValue[0].unit,
                 amountOf: 0
-            });
-            tempArray.push(selectedValue[0].label)
-        }
+            })
+        };
     }
 
     return <>

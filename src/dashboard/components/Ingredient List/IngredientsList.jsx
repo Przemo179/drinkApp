@@ -74,7 +74,7 @@ const ProductsList = ({ingredients, removeIngredient, updateAmountOf}) => {
         )
     }
     return(
-        <a>Your ingredient list is empty!</a>
+        <h1 className='empty-list-information'>Your ingredient list is empty!</h1>
     )
 }
 

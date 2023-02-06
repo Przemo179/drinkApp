@@ -45,3 +45,10 @@
   color: #212529;
   background-color: #ced4da;
 }
+
+.empty-list-information {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  color: #292921;
+}

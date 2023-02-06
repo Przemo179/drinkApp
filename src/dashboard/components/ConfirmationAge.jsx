@@ -12,7 +12,6 @@ function ConfirmAge() {
     setShowConfirm(false);
     setShowComponent("Dashboard");
     setDisplay("confirmationBlock-displayBlock");
-    console.log(display);
   };
 
   const handleNo = () => {

@@ -15,7 +15,7 @@
   
   .tableOfIng {
     margin-top: 15px;
-    /* margin-left: 0px; */
+    margin-left: 0px;
     margin-bottom: 10px;
   }
   
@@ -51,4 +51,11 @@
   justify-content: center;
   font-weight: bold;
   color: #292921;
+  margin: 3%;
+}
+
+.loading-buttons {
+  margin: 2% 0% 2% 0%;
+  display: flex;
+  justify-content: space-evenly;
 }

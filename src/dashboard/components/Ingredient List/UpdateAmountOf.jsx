@@ -16,14 +16,14 @@ export const UpdateValue = ({
             />       
         </div>
         <div className="col-auto">
-        <button 
-            onClick={updateValueChange}
-            className='btn btn-success'
-            >Update value</button> 
-        <button
-            onClick={cancelChanging}
-            className='btn btn-warning'
-            >Cancel</button>
+            <button 
+                onClick={updateValueChange}
+                className='btn btn-success'>Update value
+            </button> 
+            <button
+                onClick={cancelChanging}
+                className='btn btn-warning'>Cancel
+            </button>
         </div>
   </div>
 )

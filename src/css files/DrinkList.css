@@ -1,0 +1,13 @@
+p {
+    display: inline;
+}
+.available-ingredients {
+    color: rgb(3, 203, 3);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.notAvailable-ingredients {
+    color: red;
+    text-decoration: none;
+}

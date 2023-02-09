@@ -25,8 +25,8 @@ function ConfirmAge() {
         <div className="confirm-window">
           <p className="paragraph-center">Are you 18 years or older?</p>
           <div className="buttons-center">
-            <button onClick={handleYes}>Yes</button>
-            <button onClick={handleNo}>No</button>
+            <button className="btn btn-success" onClick={handleYes}>Yes</button>
+            <button className="btn btn-danger" onClick={handleNo}>No</button>
           </div>
         </div>
       ) : showComponent === "Dashboard" ? (
@@ -34,7 +34,7 @@ function ConfirmAge() {
       ) : showComponent === "Under18" ? (
         <Under18 />
       ) : (
-        <button className="button" onClick={() => setShowConfirm(true)}>Confirm Age</button>
+        <button className="btn btn-primary" onClick={() => setShowConfirm(true)}>Click here to confirm your age</button>
       )}
     </div>
   );

@@ -12,8 +12,6 @@ const tempArray = [];
 const IngredientsSearchBar = ({ingredients, addIngredient}) => {
     const [selectedItem, setSelectedItem] = useState([]); // selectedItem is used for "cleaning input"
     const addSingleIngredient = (name) => (selectedValue) =>{
-        console.log(nextArrayId);
-      
         if (ingredients.every(ingredient => {
             return ingredient.label !== selectedValue[0].label;
             })

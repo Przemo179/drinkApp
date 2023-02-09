@@ -5,21 +5,18 @@ import { Table, Container } from 'react-bootstrap';
 import { DrinkRow } from './DrinkRow';
 import RecipePane from '../Recipe pane/RecipePane';
 
-
-
 export const recipe = {
     "name": '',
-    'compositions': [],
-    'proportions': [],
+    'composition': [],
 }
 
 const DrinkList = ({ingredients}) => {
-    const [drinkDetails, setDrinkDetails] = useState({visible: false, recipe: recipe});
+    const [drinkDetails, setDrinkDetails] = useState({visible: false, fullDrink: recipe});
 
-    const showRecipe = (data) => {
+    const showRecipe = (filteredDrinkIngredients, missingIngredients) => {
         setDrinkDetails({
             visible: true,
-            recipe: data,
+            recipe: filteredDrinkIngredients,
         });
     }
 
@@ -27,23 +24,39 @@ const DrinkList = ({ingredients}) => {
         setDrinkDetails({visible: false});
     }
 
-    const availableIngredientsInDrink = [];
-    
-    const xd = () => {
-        ingredients.forEach(ingredient => {
-            data.drinksList.forEach(drink => {
-                drink.compositions.forEach(composition => {
-                    if(composition===ingredient.label){
-                        console.log(composition);
-                    };
-                })
-            })
-        })
-        console.log(availableIngredientsInDrink);
+    let filteredData = [];
+    let missingIngredients = [];
+
+    for (let i = 0; i < data.drinksList.length; i++) {
+      let currentDrink = data.drinksList[i];
+
+      let drinkIngredients = [];
+      for (let j = 0; j < currentDrink.composition.length; j++) {
+        let currentIng = currentDrink.composition[j];
+        let match = ingredients.find(i => i.label === currentIng.ingredient && i.amountOf >= currentIng.volume);
+        if (match) {
+          drinkIngredients.push(currentIng);
+        } else {
+            let missingIndex = missingIngredients.findIndex(i => i.name === currentDrink.name);
+            if (missingIndex !== -1) {
+                missingIngredients[missingIndex].ingredients.push(currentIng);
+            } else {
+                missingIngredients.push({
+                    name: currentDrink.name,
+                    ingredients: [currentIng]
+                });
+            }
+        }
+      }
+      filteredData.push({
+        name: currentDrink.name,
+        ingredients: drinkIngredients
+      });
     }
-    if(ingredients[0] !== undefined) {
+
+    if(filteredData[0].name !== undefined) {
     return (
-        <Container>
+        <Container className='drinkList-active'>
             <RecipePane
                 visible = {drinkDetails.visible}
                 data = {drinkDetails.recipe}
@@ -53,29 +66,31 @@ const DrinkList = ({ingredients}) => {
                 <thead>
                         <tr>
                             <th>#</th>
-                            <th>Drineczek</th>
-                            <th>składniczki</th>
-                            <th>Proporcje</th>
+                            <th>Name</th>
+                            <th>Ratio</th>
+                            <th>Available / Not Available Ingredients</th>
                         </tr>
                         </thead>
-                        <tbody>
-                            {data.drinksList.map((sDrink, id) => (
-                                 <tr    key={id}
-                                        onClick={() => showRecipe(sDrink)}>
-                                    <td>{id + 1}</td>
-                                    <td>{sDrink.name}</td>
-                                    <td key={id}>
-                                        {sDrink.compositions.map(composition => {
-                                            return composition + ' ';
-                                        })}
-                                    </td>
-                                    <td>
-                                        {sDrink.proportions.map(proportion => {
-                                            return proportion + ' ';
-                                        })}
-                                    </td>
-                             </tr>
-                            ))}
+                        <tbody className='cursor-pointer-active'>
+                            {data.drinksList.map((drink, id) => {
+                                    const filteredDrink = filteredData.find(i => i.name == drink.name);
+                                    const missingIng = missingIngredients.find(i => i.name == drink.name);
+                                return(
+                                    <DrinkRow
+                                        id = {id}
+                                        currentDrink = {drink}
+                                        currentDrinkLenght = {drink.composition.length}
+                                        currentDrinkcomposition = {drink.composition}
+                                        drinkName = {drink.name} 
+                                        filteredDrink = {filteredDrink}
+                                        filteredDrinkLenght = {filteredDrink.ingredients.length}
+                                        filteredDrinkIngredients = {filteredDrink.ingredients}
+                                        missingIngredients = {missingIng.ingredients}
+                                        showRecipe = {showRecipe}
+                                    />
+                                )
+                                })
+                            }
                         </tbody>
             </Table>
         </Container>

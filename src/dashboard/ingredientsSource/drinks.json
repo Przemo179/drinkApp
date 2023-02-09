@@ -2,54 +2,184 @@
     "drinksList": [
         {
             "name": "Yellowhammer",
-            "compositions" : [
-                "Vodka", "Rum", "Amaretto", "Pineapple juice"
+            "composition" : [
+                {
+                    "ingredient": "Vodka",
+                    "volume": 60,
+                    "unit": "ml"
+                },
+                {
+                    "ingredient": "Rum",
+                    "volume": 60,
+                    "unit": "ml"
+                },
+                {
+                    "ingredient": "Amaretto",
+                    "volume": 60,
+                    "unit": "ml"
+                },
+                {
+                    "ingredient": "Pineapple juice",
+                    "volume": 120,
+                    "unit": "ml"
+                }
             ],
-            "proportions" : [
-                60, 60, 60, 120
-            ],
-            "photo": "../src/png files/drink photos/yellowhammer.png"
+            "photo": "../src/png files/drink photos/yellowhammer.png",
+            "recipe": "super przepisik z podpunktami jak zajebać drinka i się najebać Essa"
         },
         {
             "name": "Wilno Avenue",
-            "compositions" : [
-                "Vodka", "Passoa", "Passion fruit syrup", "Lemon juice", "Cranberries juice"
+            "composition" : [
+                {
+                    "ingredient": "Vodka",
+                    "volume": 40,
+                    "unit": "ml"
+                },
+                {
+                    "ingredient": "Passoa",
+                    "volume": 20,
+                    "unit": "ml"
+                },
+                {
+                    "ingredient": "Passion fruit syrup",
+                    "volume": 10,
+                    "unit": "ml"
+                },
+                {
+                    "ingredient": "Lemon juice",
+                    "volume": 20,
+                    "unit": "ml"
+                },
+                {
+                    "ingredient": "Cranberries juice",
+                    "volume": 80,
+                    "unit": "ml"
+                }
             ],
-            "proportions" : [
-                40, 20, 10, 20, 80
-            ],
-            "photo": "../../../png files/drink photos/yellowhammer.png"
+            "photo": "../../../png files/drink photos/yellowhammer.png",
+            "recipe": "super przepisik z podpunktami jak zajebać drinka i się najebać Essa"
         },
+
         {
             "name": "Tokyo iced tea",
-            "compositions" : [
-                "Vodka", "Rum", "Gin", "Tequila", "Triple Sec", 
-                "Melon Liqueur", "Sweet & Sour", "Splash Lemon-Lime Soda", "Cheery"
+            "composition" : [
+                {
+                    "ingredient": "Vodka",
+                    "volume": 15,
+                    "unit": "ml"
+                },
+                {
+                    "ingredient": "Rum",
+                    "volume": 15,
+                    "unit": "ml"
+                },
+                {
+                    "ingredient": "Gin",
+                    "volume": 15,
+                    "unit": "ml"
+                },
+                {
+                    "ingredient": "Tequila",
+                    "volume": 15,
+                    "unit": "ml"
+                },
+                {
+                    "ingredient": "Triple Sec",
+                    "volume": 15,
+                    "unit": "ml"
+                },
+                {
+                    "ingredient": "Melon Liqueur",
+                    "volume": 15,
+                    "unit": "ml"
+                },
+                {
+                    "ingredient": "Sweet & Sour",
+                    "volume": 30,
+                    "unit": "ml"
+                },
+                {
+                    "ingredient": "Splash Lemon-Lime Soda",
+                    "volume": 10,
+                    "unit": "ml"
+                },
+                {
+                    "ingredient": "Cheery",
+                    "volume": 1,
+                    "unit": "piece"
+                }
             ],
-            "proportions" : [
-                15,15,15,15,15,15,30,10,1
-            ],
-            "photo": "../../../png files/drink photos/yellowhammer.png"
+            "photo": "../../../png files/drink photos/yellowhammer.png",
+            "recipe": "super przepisik z podpunktami jak zajebać drinka i się najebać Essa"
         },
         {
             "name": "Sex on the Beach",
-            "compositions" : [
-                "Vodka", "Archers", "Coconout syrup (Malibu)", "Orange juice", "Cranberries juice"
+            "composition" : [
+                {
+                    "ingredient": "Vodka",
+                    "volume": 40,
+                    "unit": "ml"
+                },
+                {
+                    "ingredient": "Archers",
+                    "volume": 20,
+                    "unit": "ml"
+                },
+                {
+                    "ingredient": "Coconout syrup (Malibu)",
+                    "volume": 20,
+                    "unit": "ml"
+                },
+                {
+                    "ingredient": "Orange juice",
+                    "volume": 50,
+                    "unit": "ml"
+                },
+                {
+                    "ingredient": "Cranberries juice",
+                    "volume": 1,
+                    "unit": "ml"
+                }
             ],
-            "proportions" : [
-                40, 20, 20, 50, 1
-            ],
-            "photo": "../../../png files/drink photos/yellowhammer.png"
+            "photo": "../../../png files/drink photos/yellowhammer.png",
+            "recipe": "super przepisik z podpunktami jak zajebać drinka i się najebać Essa"
         },
         {
             "name": "Salty Bird",
-            "compositions" : [
-                "White rum", "Campari", "Pineapple juice", "Lime juice", "Simple Syrup", "Salt"
+            "composition" : [
+                {
+                    "ingredient": "White rum",
+                    "volume": 45,
+                    "unit": "ml"
+                },
+                {
+                    "ingredient": "Campari",
+                    "volume": 22.5,
+                    "unit": "ml"
+                },
+                {
+                    "ingredient": "Pineapple juice",
+                    "volume": 45,
+                    "unit": "ml"
+                },
+                {
+                    "ingredient": "Lime juice",
+                    "volume": 15,
+                    "unit": "ml"
+                },
+                {
+                    "ingredient": "Simple Syrup",
+                    "volume": 15,
+                    "unit": "ml"
+                },
+                {
+                    "ingredient": "Salt",
+                    "volume": 1,
+                    "unit": "g"
+                }
             ],
-            "proportions" : [
-                45, 22.5, 45, 15, 15, 1
-            ],
-            "photo": "../../../png files/drink photos/yellowhammer.png"
+            "photo": "../../../png files/drink photos/yellowhammer.png",
+            "recipe": "super przepisik z podpunktami jak zajebać drinka i się najebać Essa"
         }
     ]
 }

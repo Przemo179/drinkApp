@@ -2,10 +2,9 @@ import '../../../css files/DrinkList.css'
 
 export const DrinkRow = ({id, currentDrink, currentDrinkLenght, currentDrinkcomposition, drinkName, filteredDrink, filteredDrinkLenght, filteredDrinkIngredients, missingIngredients, showRecipe}) => 
 {
-    console.log(missingIngredients);
     return (
     <tr key={id}
-        onClick={() => showRecipe(filteredDrinkIngredients, missingIngredients)}>
+        onClick={() => showRecipe(currentDrink)}>
         <td>{id + 1}</td>
         <td>{drinkName}</td>
         <td key={id}>

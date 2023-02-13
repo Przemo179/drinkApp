@@ -18,11 +18,11 @@ export const UpdateValue = ({
         <div className="col-auto">
             <button 
                 onClick={updateValueChange}
-                className='btn btn-success'>Update value
+                className='btn btn-success me-2'>Update value
             </button> 
             <button
                 onClick={cancelChanging}
-                className='btn btn-warning'>Cancel
+                className='btn btn-warning me-2'>Cancel
             </button>
         </div>
   </div>

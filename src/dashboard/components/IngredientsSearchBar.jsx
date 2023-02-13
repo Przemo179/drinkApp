@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { addIngredient } from "../redux/actions/actions";
 import data from '../ingredientsSource/ingredients.json';
 import '../../css files/Dashboard.css'
+import { Container } from 'react-bootstrap';
 
 let nextArrayId = 0;
 const tempArray = [];
@@ -26,6 +27,7 @@ const IngredientsSearchBar = ({ingredients, addIngredient}) => {
     }
 
     return <>
+        <Container>
             <Typeahead 
                 className='typehead form-control'
                 id="basic-example"
@@ -34,6 +36,7 @@ const IngredientsSearchBar = ({ingredients, addIngredient}) => {
                 placeholder="Enter ingredients!"
                 selected={selectedItem}
             />
+        </Container>
         </>;
 };
 

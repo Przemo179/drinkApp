@@ -60,13 +60,3 @@
     border: var(--bs-dropdown-border-width) solid var(--bs-dropdown-border-color);
     border-radius: var(--bs-dropdown-border-radius);
 }
-
-.drinkList-active {
-    margin-top: 15px;
-    margin-left: 0px;
-    margin-bottom: 10px;
-}
-
-.cursor-pointer-active {
-    cursor: pointer;
-}

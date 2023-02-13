@@ -2,38 +2,53 @@ import * as React from 'react';
 import { recipe } from '../Drink list/DrinksList';
 import SlidingPane from 'react-sliding-pane';
 import 'react-sliding-pane/dist/react-sliding-pane.css';
+import '../../../css files/RecipePane.css'
 
-// const Props ={
-//     'visible': Boolean,
-//     'data': recipe,
-//     'closePanel': () => {}
-// }
 
-const RecipePane = ({visible, data, closePanel}) => {
-
+const RecipePane = ({visible, drinkData, name, ingredients, photo, recipe, closePanel, link}) => {
+    console.log(ingredients);
     return (
         <SlidingPane
-            className='sliding-pane'
+            className='sliding-pane wrapper-recipePane'
             isOpen={visible}
-            title={data && data.name ? data.name : 'did not catch title :('}
+            title={name ? name : 'did not catch title :('}
             width={window.innerWidth < 600 ? "100%" : "500px"}
             onRequestClose={closePanel}
+            hideHeader
         >
-            <div className='xxx'>
-                {/* <div className='xxx__zdjecie'> */}
-                <div>
-                    <img src={data && data.photo ? data.photo : 'there is not photo'} alt="kurwa"/>
+            <div className='recipeDetails'>
+                <div className='recipeDetails__photo'> 
+                    <img src={photo ? photo : 'there is not photo'} alt="kurwa"/>
                 </div>
-                <div className='xxx__skladniki'>
-                    <div className='xxx__skladniki--box'>
-                        {/* TRZEBA PAMIĘTAĆ, ŻEBY SPRAWDZAĆ CZY AKTUALNIE ISTNIEJĄ TE RZECZY!!
-                        <div> {data skladniki mapować} 
+                <div>
+                    <div>
+                        <div className="recipeDetails__ingredients">
+                            <a>Required ingredients:</a> <br/>
+                            {ingredients ? ingredients.map((ingredient, id) => {
+                                return(
+                                    <>
+                                    <p>{(id+1) + '. ' + ingredient.ingredient + ' - ' + (ingredient.volume > '1' ? (ingredient.volume + ingredient.unit) : 'At Choice')}</p>
+                                    <br/>
+                                    </>
+                                )
+                            }) : ""} 
+                        </div>
+                        <div className='recipeDetails__order'>
+                            <a>Recipe</a><br/>
+                            {recipe ? recipe.map((step, id) => {
+                                return(
+                                    <div className='recipeDetails__order__steps'>
+                                        <p>{"Step " + (id+1) + '. '}</p>
+                                        <span />
+                                        <p>{step}</p>
+                                        <br />
+                                    </div>
+                                )
+                            }) : ''}
+                        </div>
+                        {/* <div className='recipeDetails__link'>
+                            <a href={link}>Link to youtube video</a>
                         </div> */}
-                        {/* 
-                        <div> { data proporocje odpowiednie} 
-                        </div>*/}
-                        {/* <div> {data przepis}
-                        </div>*/}
                     </div>
                 </div>
             </div>

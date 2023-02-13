@@ -9,7 +9,6 @@ import '../../../css files/IngredientList.css'
 
 const ProductsList = ({ingredients, removeIngredient, updateAmountOf}) => {
     const [changeValue, setChangeValue] = useState('');
-    const [showAllList, setShowAllList] = useState(false);
 
     const removeFromStore = (id) => {
         removeIngredient({
@@ -42,16 +41,6 @@ const ProductsList = ({ingredients, removeIngredient, updateAmountOf}) => {
         setChangeValue('');
     }
 
-    const showAllRecipes = () => {
-        setShowAllList(true);
-        
-    }
-
-    const showAvailableRecipes = () => {
-
-    }
-
-
     if(ingredients[0] !== undefined){
         return(
             <Container className='tableOfIng'>
@@ -79,10 +68,6 @@ const ProductsList = ({ingredients, removeIngredient, updateAmountOf}) => {
                         ))}
                     </tbody>
                 </Table>
-            <div className='loading-buttons'>
-                <button className='btn btn-success' onClick={() => showAllRecipes()}>Load all recipes</button>
-                <button className='btn btn-success' onClick={() => showAvailableRecipes()}>Load available recipes</button>
-            </div>
             </Container>
 
 
@@ -91,7 +76,6 @@ const ProductsList = ({ingredients, removeIngredient, updateAmountOf}) => {
     return(
         <div>
             <h1 className='empty-list-information'>Your ingredient list is empty!</h1>
-            <button className='btn btn-success' onClick={() => showAllRecipes()}>Load all recipes</button>
         </div>
     )
 }

@@ -24,8 +24,10 @@
                     "unit": "ml"
                 }
             ],
+            "lenght": 4,
             "photo": "../src/png files/drink photos/yellowhammer.png",
-            "recipe": "super przepisik z podpunktami jak zajebać drinka i się najebać Essa"
+            "recipe": ["super przepisik z podpunktami jak zajebać drinka i się najebać Essa", "xd", "dada"],
+            "link": "https://www.youtube.com/watch?v=RXKyDdZhey0"
         },
         {
             "name": "Wilno Avenue",
@@ -56,8 +58,10 @@
                     "unit": "ml"
                 }
             ],
+            "lenght": 5,
             "photo": "../../../png files/drink photos/yellowhammer.png",
-            "recipe": "super przepisik z podpunktami jak zajebać drinka i się najebać Essa"
+            "recipe": ["super przepisik z podpunktami jak zajebać drinka i się najebać Essa", "xd", "dada"],
+            "link": "https://www.youtube.com/watch?v=RXKyDdZhey0"
         },
 
         {
@@ -109,8 +113,10 @@
                     "unit": "piece"
                 }
             ],
+            "lenght": 9,
             "photo": "../../../png files/drink photos/yellowhammer.png",
-            "recipe": "super przepisik z podpunktami jak zajebać drinka i się najebać Essa"
+            "recipe": ["super przepisik z podpunktami jak zajebać drinka i się najebać Essa", "xd", "dada"],
+            "link": "https://www.youtube.com/watch?v=RXKyDdZhey0"
         },
         {
             "name": "Sex on the Beach",
@@ -141,8 +147,10 @@
                     "unit": "ml"
                 }
             ],
+            "lenght": 5,
             "photo": "../../../png files/drink photos/yellowhammer.png",
-            "recipe": "super przepisik z podpunktami jak zajebać drinka i się najebać Essa"
+            "recipe": ["super przepisik z podpunktami jak zajebać drinka i się najebać Essa", "xd", "dada"],
+            "link": "https://www.youtube.com/watch?v=RXKyDdZhey0"
         },
         {
             "name": "Salty Bird",
@@ -178,8 +186,10 @@
                     "unit": "g"
                 }
             ],
+            "lenght": 6,
             "photo": "../../../png files/drink photos/yellowhammer.png",
-            "recipe": "super przepisik z podpunktami jak zajebać drinka i się najebać Essa"
+            "recipe": ["super przepisik z podpunktami jak zajebać drinka i się najebać Essa", "super przepisik z podpunktami jak zajebać drinka i się najebać Essa", "super przepisik z podpunktami jak zajebać drinka i się najebać Essa"],
+            "link": "https://www.youtube.com/watch?v=RXKyDdZhey0"
         }
     ]
 }

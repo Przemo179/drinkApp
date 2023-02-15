@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import data from '../../ingredientsSource/drinks.json';
 import {connect} from "react-redux";
 import { Table, Container } from 'react-bootstrap';
@@ -15,6 +15,7 @@ const recipe = {
 }
 
 const DrinkList = ({ingredients}) => {
+    const [dataState, setData] = useState(data);
     const [drinkDetails, setDrinkDetails] = useState({visible: false, fullDrink: recipe});
     const [showFullList, setShowFullList] = useState(false);
     const [choosenFilter, setChoosenFilter] = useState('');
@@ -23,12 +24,14 @@ const DrinkList = ({ingredients}) => {
         setShowFullList(true);
     }
 
-    const showRecipe = (drink) => {
+    const showRecipe = (drink, id) => {
         setDrinkDetails({
             visible: true,
             fullDrink: drink,
+            id: id
         });
     }
+
     const closePane = () => {
         setDrinkDetails({
             visible: false,
@@ -38,8 +41,8 @@ const DrinkList = ({ingredients}) => {
     let filteredData = [];
     let missingIngredients = [];
 
-    for (let i = 0; i < data.drinksList.length; i++) {
-      let currentDrink = data.drinksList[i];
+    for (let i = 0; i < dataState.drinksList.length; i++) {
+      let currentDrink = dataState.drinksList[i];
 
       let drinkIngredients = [];
       for (let j = 0; j < currentDrink.composition.length; j++) {
@@ -65,6 +68,12 @@ const DrinkList = ({ingredients}) => {
       });
     }
 
+
+    const addToFavorite = (id) => {
+        dataState.drinksList[id].isFavorite ? dataState.drinksList[id].isFavorite = false : dataState.drinksList[id].isFavorite = true;
+        setData({...dataState} )
+    }
+
     const selectedFilter = (e) => {
         if(e == 'alphabetically'){
             setChoosenFilter('alphabetically');
@@ -74,13 +83,16 @@ const DrinkList = ({ingredients}) => {
             setChoosenFilter('crescively');
         } else if(e == 'searchedIngredient') {
             setChoosenFilter('searchedIngredient');
-        } else {
+        
+        } else if(e == 'favoriteList') {
+            setChoosenFilter('favoriteList');
+        }
+         else {
             setChoosenFilter('');
         }
     }
 
 
-    console.log(data[0]);
     if(showFullList) {
         return (
             <Container className='drinkList-active tableOfDrinks'>
@@ -88,13 +100,15 @@ const DrinkList = ({ingredients}) => {
                 { drinkDetails.fullDrink ? (
                 <RecipePane
                     visible = {drinkDetails.visible}
-                    drinkData = {drinkDetails.fullDrink}
                     name = {drinkDetails.fullDrink.name}
                     ingredients = {drinkDetails.fullDrink.composition}
                     photo = {drinkDetails.fullDrink.photo}
                     recipe = {drinkDetails.fullDrink.recipe}
                     closePanel = {closePane}
                     link = {drinkDetails.fullDrink.link}
+                    id = {drinkDetails.id}
+                    addToFavorite = {addToFavorite}
+                    isFavorite = {drinkDetails.fullDrink.isFavorite}
                     />
                 ) : ''}
                 <div className='settingMenu'>
@@ -108,6 +122,7 @@ const DrinkList = ({ingredients}) => {
                         <option value="inDescendingOrder">In descending order</option>
                         <option value="crescively">Crescively</option>
                         <option value="searchedIngredient">Search Ingredient</option>
+                        <option value="favoriteList">Favorite List</option>
                     </select>
                 </div>
                 <Table variant='dark' bordered hover>
@@ -117,75 +132,115 @@ const DrinkList = ({ingredients}) => {
                                 <th>Name</th>
                                 <th>Ratio</th>
                                 <th>Available / Not Available Ingredients</th>
+                                <th>Fav</th>
                             </tr>
                             </thead>
                             <tbody className='cursor-pointer-active'>
                                 {choosenFilter == 'alphabetically' ? (
-                                    data.drinksList
-                                                    .sort((a,b) => a.name > b.name ? 1 : ((b.name > a.name) ? -1 : 0))
-                                                    .map((drink, id) => {
-                                        drink.composition[0].volume = 666;  
-                                        console.log(drink);
-                                        const filteredDrink = filteredData.find(i => i.name === drink.name);
-                                        const missingIng = missingIngredients.find(i => i.name === drink.name);
+                                    dataState.drinksList
+                                        .sort((a,b) => a.name > b.name ? 1 : ((b.name > a.name) ? -1 : 0))
+                                        .map((drink, id) => {
+                                            // console.log('gd', drink.isFavorite);
+                                            const filteredDrink = filteredData.find(i => i.name === drink.name);
+                                            const missingIng = missingIngredients.find(i => i.name === drink.name);
                                     return(
                                         <DrinkRow
                                             id = {id}
                                             currentDrink = {drink}
                                             currentDrinkLenght = {drink.lenght}
-                                            currentDrinkcomposition = {drink.composition}
                                             drinkName = {drink.name} 
-                                            filteredDrink = {filteredDrink}
                                             filteredDrinkLenght = {filteredDrink.ingredients.length}
                                             filteredDrinkIngredients = {filteredDrink.ingredients}
                                             missingIngredients = {missingIng.ingredients}
                                             showRecipe = {showRecipe}
+                                            addToFavorite = {addToFavorite}
+                                            isFavorite = {drink.isFavorite}
                                         />
                                     )
                                     }) ) : choosenFilter == 'inDescendingOrder' ? (
-                                        data.drinksList
-                                                        .sort((a,b) => a.composition.length < b.composition.length ? 1 :((b.composition.length < a.composition.length) ? -1 : 0))
-                                                        .map((drink, id) => {
-                                            const filteredDrink = filteredData.find(i => i.name === drink.name);
-                                            const missingIng = missingIngredients.find(i => i.name === drink.name);
+                                        dataState.drinksList
+                                            .sort((a,b) => a.composition.length < b.composition.length ? 1 :((b.composition.length < a.composition.length) ? -1 : 0))
+                                            .map((drink, id) => {
+                                                const filteredDrink = filteredData.find(i => i.name === drink.name);
+                                                const missingIng = missingIngredients.find(i => i.name === drink.name);
                                             return(
                                                 <DrinkRow
                                                     id = {id}
                                                     currentDrink = {drink}
                                                     currentDrinkLenght = {drink.lenght}
-                                                    currentDrinkcomposition = {drink.composition}
                                                     drinkName = {drink.name} 
-                                                    filteredDrink = {filteredDrink}
                                                     filteredDrinkLenght = {filteredDrink.ingredients.length}
                                                     filteredDrinkIngredients = {filteredDrink.ingredients}
                                                     missingIngredients = {missingIng.ingredients}
                                                     showRecipe = {showRecipe}
+                                                    addToFavorite = {addToFavorite}
+                                                    isFavorite = {drink.isFavorite}
                                                 />
                                             )
                                         })
                                         ) : choosenFilter == 'crescively' ? (
-                                            data.drinksList
-                                                            .sort((a,b) => a.composition.length > b.composition.length ? 1 :((b.composition.length > a.composition.length) ? -1 : 0))
-                                                            .map((drink, id) => {
-                                                const filteredDrink = filteredData.find(i => i.name === drink.name);
-                                                const missingIng = missingIngredients.find(i => i.name === drink.name);
+                                            dataState.drinksList
+                                                .sort((a,b) => a.composition.length > b.composition.length ? 1 :((b.composition.length > a.composition.length) ? -1 : 0))
+                                                .map((drink, id) => {
+                                                    const filteredDrink = filteredData.find(i => i.name === drink.name);
+                                                    const missingIng = missingIngredients.find(i => i.name === drink.name);
                                                 return(
                                                     <DrinkRow
                                                         id = {id}
                                                         currentDrink = {drink}
                                                         currentDrinkLenght = {drink.lenght}
-                                                        currentDrinkcomposition = {drink.composition}
                                                         drinkName = {drink.name} 
-                                                        filteredDrink = {filteredDrink}
                                                         filteredDrinkLenght = {filteredDrink.ingredients.length}
                                                         filteredDrinkIngredients = {filteredDrink.ingredients}
                                                         missingIngredients = {missingIng.ingredients}
                                                         showRecipe = {showRecipe}
+                                                        addToFavorite = {addToFavorite}
+                                                        isFavorite = {drink.isFavorite}
                                                     />
                                                 )
                                             }) 
                                         ) : choosenFilter == 'searchedIngredient' ? ('da')
-                                        : ('xd')
+                                        : choosenFilter == 'favoriteList' ? (
+                                            dataState.drinksList
+                                                .filter(i => i.isFavorite == true)
+                                                .map((drink, id) => {
+                                                    const filteredDrink = filteredData.find(i => i.name === drink.name);
+                                                    const missingIng = missingIngredients.find(i => i.name === drink.name);
+                                                return(
+                                                    <DrinkRow
+                                                        id = {id}
+                                                        currentDrink = {drink}
+                                                        currentDrinkLenght = {drink.lenght}
+                                                        drinkName = {drink.name} 
+                                                        filteredDrinkLenght = {filteredDrink.ingredients.length}
+                                                        filteredDrinkIngredients = {filteredDrink.ingredients}
+                                                        missingIngredients = {missingIng.ingredients}
+                                                        showRecipe = {showRecipe}
+                                                        addToFavorite = {addToFavorite}
+                                                        isFavorite = {drink.isFavorite}
+                                                    />
+                                                )
+                                            })
+                                        ) :
+                                        (        
+                                            dataState.drinksList.map((drink, id) => {
+                                                const filteredDrink = filteredData.find(i => i.name === drink.name);
+                                                const missingIng = missingIngredients.find(i => i.name === drink.name);
+                                                return(                              
+                                                <DrinkRow
+                                                    id = {id}
+                                                    currentDrink = {drink}
+                                                    currentDrinkLenght = {drink.lenght}
+                                                    drinkName = {drink.name} 
+                                                    filteredDrinkLenght = {filteredDrink.ingredients.length}
+                                                    filteredDrinkIngredients = {filteredDrink.ingredients}
+                                                    missingIngredients = {missingIng.ingredients}
+                                                    showRecipe = {showRecipe}
+                                                    addToFavorite = {addToFavorite}
+                                                    isFavorite = {drink.isFavorite}
+                                                />
+                                                )})
+                                        )
                                     }
                             </tbody>
                 </Table>

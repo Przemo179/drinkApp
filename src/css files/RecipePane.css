@@ -5,6 +5,7 @@
 
 .recipeDetails {
     display: inline-block;
+    width: 100%;
 }
 
 .recipeDetails__photo {
@@ -15,8 +16,8 @@
 }
 
 .recipeDetails__ingredients {
-
 }
+
 .recipeDetails__ingredients a {
     font-size: 20px;
     font-weight: bold;
@@ -43,6 +44,15 @@
     justify-content: center;
 }
 
+.recipeDetails--close {
+    color: lightskyblue;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin-bottom: 8%;
+    cursor: pointer;
+}
+
 .recipeDetails__order p {
     margin: 0;
     display: flex;
@@ -60,4 +70,41 @@
 
 }
 
+.drinkHeadline {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 5% 2.5% 5% 2.5%;
+    background-color: #60a2e5;
+    border: 2px solid #212529;
+    border-radius: 15px;
+    color: #212529;
+    padding: 10px;
+}
 
+.drinkHeadline a {
+    font-size: 25px;
+    font-weight: bold;
+}
+.drinkHeadline__favorite__drink {
+display: flex;
+justify-content: center;
+align-items: center;
+cursor: cell;
+color: white;
+}
+
+.drinkHeadline__favorite__drink--False {
+    color: white;
+}
+
+.drinkHeadline__favorite__drink--True {
+    color: yellow;
+}
+
+.drinkHeadline__favorite__drink--False:hover {
+    color: green;
+}
+
+.drinkHeadline__favorite__drink--True:hover {
+    color: green;
+}

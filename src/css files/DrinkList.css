@@ -72,3 +72,28 @@ p {
     color: #212529;
     background-color: #ced4da;
   }
+
+.favorite__drink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: cell;
+    color: white;
+}
+
+.favorite__drink--False {
+    color: white;
+}
+
+.favorite__drink--True {
+    color: yellow;
+}
+
+
+.favorite__drink--True:hover {
+    color: green;
+}
+
+.favorite__drink--False:hover {
+    color: green;
+}

@@ -25,6 +25,7 @@
                 }
             ],
             "lenght": 4,
+            "isFavorite": false,
             "photo": "../src/png files/drink photos/yellowhammer.png",
             "recipe": ["super przepisik z podpunktami jak zajebać drinka i się najebać Essa", "xd", "dada"],
             "link": "https://www.youtube.com/watch?v=RXKyDdZhey0"
@@ -59,6 +60,7 @@
                 }
             ],
             "lenght": 5,
+            "isFavorite": false,
             "photo": "../../../png files/drink photos/yellowhammer.png",
             "recipe": ["super przepisik z podpunktami jak zajebać drinka i się najebać Essa", "xd", "dada"],
             "link": "https://www.youtube.com/watch?v=RXKyDdZhey0"
@@ -114,6 +116,7 @@
                 }
             ],
             "lenght": 9,
+            "isFavorite": false,
             "photo": "../../../png files/drink photos/yellowhammer.png",
             "recipe": ["super przepisik z podpunktami jak zajebać drinka i się najebać Essa", "xd", "dada"],
             "link": "https://www.youtube.com/watch?v=RXKyDdZhey0"
@@ -148,6 +151,7 @@
                 }
             ],
             "lenght": 5,
+            "isFavorite": false,
             "photo": "../../../png files/drink photos/yellowhammer.png",
             "recipe": ["super przepisik z podpunktami jak zajebać drinka i się najebać Essa", "xd", "dada"],
             "link": "https://www.youtube.com/watch?v=RXKyDdZhey0"
@@ -187,6 +191,7 @@
                 }
             ],
             "lenght": 6,
+            "isFavorite": false,
             "photo": "../../../png files/drink photos/yellowhammer.png",
             "recipe": ["super przepisik z podpunktami jak zajebać drinka i się najebać Essa", "super przepisik z podpunktami jak zajebać drinka i się najebać Essa", "super przepisik z podpunktami jak zajebać drinka i się najebać Essa"],
             "link": "https://www.youtube.com/watch?v=RXKyDdZhey0"

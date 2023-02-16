@@ -4,7 +4,7 @@ import { Table } from 'react-bootstrap';
 import { Container } from "react-bootstrap";
 import { removeIngredient, updateAmountOf } from "../../redux/actions/actions";
 import {connect} from "react-redux";
-import { IngredientRow } from './IngredientRow';
+import { IngredientRow } from '../Representative components/IngredientRow';
 import '../../../css files/IngredientList.css'
 
 const ProductsList = ({ingredients, removeIngredient, updateAmountOf}) => {

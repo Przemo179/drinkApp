@@ -2,10 +2,8 @@ import { useState, useEffect } from 'react';
 import data from '../../ingredientsSource/drinks.json';
 import {connect} from "react-redux";
 import { Table, Container } from 'react-bootstrap';
-import { DrinkRow } from './DrinkRow';
-import RecipePane from '../Recipe pane/RecipePane';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFilter, faPen } from '@fortawesome/free-solid-svg-icons';
+import { DrinkRow } from '../Representative components/DrinkRow';
+import RecipePane from '../Representative components/RecipePane';
 import '../../../css files/DrinkList.css'
 
 

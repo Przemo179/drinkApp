@@ -1,7 +1,7 @@
 import Under18 from "./Under18";
-import { Dashboard } from "./Dashboard";
+import { Dashboard } from "../Dashboard";
 import React, { useState } from "react";
-import '../../css files/ConfirmationAge.css'
+import '../../../css files/ConfirmationAge.css'
 
 function ConfirmAge() {
   const [showConfirm, setShowConfirm] = useState(false);

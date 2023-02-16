@@ -2,9 +2,9 @@ import React, { useState, useEffect} from 'react';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import 'bootstrap/dist/css/bootstrap.css';
 import { connect } from "react-redux";
-import { addIngredient } from "../redux/actions/actions";
-import data from '../ingredientsSource/ingredients.json';
-import '../../css files/Dashboard.css'
+import { addIngredient } from "../../redux/actions/actions";
+import data from '../../ingredientsSource/ingredients.json';
+import '../../../css files/Dashboard.css'
 import { Container } from 'react-bootstrap';
 
 let nextArrayId = 0;
@@ -27,7 +27,7 @@ const IngredientsSearchBar = ({ingredients, addIngredient}) => {
     }
 
     return <>
-        <Container>
+        <Container className='xd'>
             <Typeahead 
                 className='typehead form-control'
                 id="basic-example"

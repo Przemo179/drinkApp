@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { recipe } from '../Drink list/DrinksList';
+import { recipe } from '../Functional components/DrinksList';
 import SlidingPane from 'react-sliding-pane';
 import 'react-sliding-pane/dist/react-sliding-pane.css';
 import '../../../css files/RecipePane.css'

@@ -11,36 +11,12 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Drink helper is application dedicated to help user with creating drinks. After run app first what user see is age checking, after failing test user will be moved to page for under 18 people. When customer pass test, page shows correct view.
 
-### `npm test`
+First component has Input, this input is "Typehead" from bootstrap. I used it beacuse user now can't type wrong ingredient name then it's in .json file with ingredient list.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+After add ingredient, it store in redux object. And displaying below in list - list is from bootstrap "Table". Ingredient list is another component where customer has current information about available ingredient with unit and volume. In this component user can change volume and remove ingredients.
 
-### `npm run build`
+After prepared list of ingredient user can load drinks list with every drink - list is from bootstrap "Table" there user has posibilty to change filter for his preferences - filter window is from bootstrap "select" . Here customer can add drink to favorite and filter by it. After clicking in choosen drink, page will show recipe. Recipe pane is created with library "SlidingPane"
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Icons used I took from Fontawesome and React-icons.

@@ -11,8 +11,16 @@
 .recipeDetails__photo {
     display: flex;
     justify-content: center;
-    height: 200px;
-    width: auto;
+    /* height: 300px; */
+    margin: 0% 2.5% 3% 2.5%;
+    padding: 10px;
+}
+
+.recipeDetails__photo img {
+    width: 100%;
+    border-radius: 8%;
+    border: 2px solid #60a2e5;
+
 }
 
 /* .recipeDetails__ingredients {

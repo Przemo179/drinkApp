@@ -3,5 +3,4 @@ const Under18 = () => (
         <p>this page is in progress...</p>
     </div>
 )
-
 export default Under18;

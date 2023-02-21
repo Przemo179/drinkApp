@@ -13,8 +13,8 @@ export const DrinkRow = ({id, currentDrink, currentDrinkLenght, drinkName, filte
             {filteredDrinkLenght + ' / ' + currentDrinkLenght}
         </td>
         <td onClick={() => showRecipe(currentDrink, id)}>
-            <p className='available-ingredients'>{filteredDrinkIngredients.map(ingredient => ingredient.ingredient + ' ')}</p>
-            <p className='notAvailable-ingredients'>{missingIngredients.map(ingredient => ingredient.ingredient + ' ')}</p>
+            <p className='available-ingredients'>{filteredDrinkIngredients.map(ingredient => ingredient.ingredient + ', ')}</p>
+            <p className='notAvailable-ingredients'>{missingIngredients.map(ingredient => ingredient.ingredient + ', ')}</p>
         </td>
         <td>
             <div className='favorite__drink '>

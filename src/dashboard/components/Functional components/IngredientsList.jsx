@@ -1,10 +1,9 @@
 import React, { useState} from 'react';
-// Bootstrap
-import { Table } from 'react-bootstrap';
-import { Container } from "react-bootstrap";
 import { removeIngredient, updateAmountOf } from "../../redux/actions/actions";
 import {connect} from "react-redux";
 import { IngredientRow } from '../Representative components/IngredientRow';
+import { Table } from 'react-bootstrap';
+import { Container } from "react-bootstrap";
 import '../../../css files/IngredientList.css'
 
 const ProductsList = ({ingredients, removeIngredient, updateAmountOf}) => {
@@ -49,7 +48,7 @@ const ProductsList = ({ingredients, removeIngredient, updateAmountOf}) => {
                         <tr>
                             <th>#</th>
                             <th>Name</th>
-                            <th>Amount of</th>
+                            <th>Volume</th>
                             <th>Del</th>
                         </tr>
                     </thead>

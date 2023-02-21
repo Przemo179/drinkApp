@@ -26,8 +26,8 @@
             ],
             "lenght": 4,
             "isFavorite": false,
-            "photo": "../src/png files/drink photos/yellowhammer.png",
-            "recipe": ["super przepisik z podpunktami jak zajebać drinka i się najebać Essa", "xd", "dada"],
+            "photo": "drink images/yellowhammer.png",
+            "recipe": ["drink recipe step 1", "drink recipe step 1", "drink recipe step 1"],
             "link": "https://www.youtube.com/watch?v=RXKyDdZhey0"
         },
         {
@@ -61,8 +61,8 @@
             ],
             "lenght": 5,
             "isFavorite": false,
-            "photo": "../../../png files/drink photos/yellowhammer.png",
-            "recipe": ["super przepisik z podpunktami jak zajebać drinka i się najebać Essa", "xd", "dada"],
+            "photo": "drink images/yellowhammer.png",
+            "recipe": ["drink recipe step 1", "drink recipe step 1", "drink recipe step 1"],
             "link": "https://www.youtube.com/watch?v=RXKyDdZhey0"
         },
 
@@ -117,8 +117,8 @@
             ],
             "lenght": 9,
             "isFavorite": false,
-            "photo": "../../../png files/drink photos/yellowhammer.png",
-            "recipe": ["super przepisik z podpunktami jak zajebać drinka i się najebać Essa", "xd", "dada"],
+            "photo": "drink images/tokyo_iced_tea.png",
+            "recipe": ["drink recipe step 1", "drink recipe step 1", "drink recipe step 1"],
             "link": "https://www.youtube.com/watch?v=RXKyDdZhey0"
         },
         {
@@ -152,8 +152,8 @@
             ],
             "lenght": 5,
             "isFavorite": false,
-            "photo": "../../../png files/drink photos/yellowhammer.png",
-            "recipe": ["super przepisik z podpunktami jak zajebać drinka i się najebać Essa", "xd", "dada"],
+            "photo": "drink images/sex_on_the_beach.png",
+            "recipe": ["drink recipe step 1", "drink recipe step 1", "drink recipe step 1"],
             "link": "https://www.youtube.com/watch?v=RXKyDdZhey0"
         },
         {
@@ -192,8 +192,8 @@
             ],
             "lenght": 6,
             "isFavorite": false,
-            "photo": "../../../png files/drink photos/yellowhammer.png",
-            "recipe": ["super przepisik z podpunktami jak zajebać drinka i się najebać Essa", "super przepisik z podpunktami jak zajebać drinka i się najebać Essa", "super przepisik z podpunktami jak zajebać drinka i się najebać Essa"],
+            "photo": "drink images/Salty_bird.png",
+            "recipe": ["drink recipe step 1", "drink recipe step 1", "drink recipe step 1"],
             "link": "https://www.youtube.com/watch?v=RXKyDdZhey0"
         }
     ]

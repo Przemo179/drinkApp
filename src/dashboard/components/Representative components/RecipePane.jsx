@@ -17,6 +17,7 @@ const RecipePane = ({visible, name, ingredients, photo, recipe, closePanel, link
             width={window.innerWidth < 600 ? "100%" : "500px"}
             onRequestClose={closePanel}
             hideHeader
+            key = {id}
         >
             <div className='recipeDetails'>
                 <div>
@@ -33,7 +34,7 @@ const RecipePane = ({visible, name, ingredients, photo, recipe, closePanel, link
                     </div>
                 </div>
                 <div className='recipeDetails__photo'> 
-                    <img src={photo ? photo : 'there is not photo'} alt="kurwa"/>
+                    <img src={photo ? photo : 'there is not photo'} alt={name}/>
                 </div>
                 <div>
                     <div>

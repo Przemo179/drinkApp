@@ -2,13 +2,18 @@ p {
     display: inline;
 }
 .available-ingredients {
-    color: rgb(3, 203, 3);
+    color: #ced4da;
     text-decoration: none;
     font-weight: bold;
 }
 
+.drinkName {
+    font-weight: bold;
+}
+
 .notAvailable-ingredients {
-    color: red;
+    color: #ced4da;
+    opacity: 0.5;
     text-decoration: none;
 }
 

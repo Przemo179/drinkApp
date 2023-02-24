@@ -1,13 +1,14 @@
+/* eslint-disable react/react-in-jsx-scope */
 import IngredientsSearchBar from "./Functional components/IngredientsSearchBar";
-import ProductsList from "./Functional components/IngredientsList"
+import ProductsList from "./Functional components/IngredientsList";
 import DrinksList from "./Functional components/DrinksList";
 
 export const Dashboard = () => {
-    return (
+  return (
     <div>
-        <IngredientsSearchBar />
-        <ProductsList />
-        <DrinksList />
-    </div>  
-    )
-}
+      <IngredientsSearchBar />
+      <ProductsList />
+      <DrinksList />
+    </div>
+  );
+};

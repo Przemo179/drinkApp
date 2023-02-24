@@ -25,7 +25,6 @@
                 }
             ],
             "lenght": 4,
-            "isFavorite": false,
             "photo": "drink images/yellowhammer.png",
             "recipe": ["drink recipe step 1", "drink recipe step 1", "drink recipe step 1"],
             "link": "https://www.youtube.com/watch?v=RXKyDdZhey0"
@@ -60,7 +59,6 @@
                 }
             ],
             "lenght": 5,
-            "isFavorite": false,
             "photo": "drink images/yellowhammer.png",
             "recipe": ["drink recipe step 1", "drink recipe step 1", "drink recipe step 1"],
             "link": "https://www.youtube.com/watch?v=RXKyDdZhey0"
@@ -116,7 +114,6 @@
                 }
             ],
             "lenght": 9,
-            "isFavorite": false,
             "photo": "drink images/tokyo_iced_tea.png",
             "recipe": ["drink recipe step 1", "drink recipe step 1", "drink recipe step 1"],
             "link": "https://www.youtube.com/watch?v=RXKyDdZhey0"
@@ -151,7 +148,6 @@
                 }
             ],
             "lenght": 5,
-            "isFavorite": false,
             "photo": "drink images/sex_on_the_beach.png",
             "recipe": ["drink recipe step 1", "drink recipe step 1", "drink recipe step 1"],
             "link": "https://www.youtube.com/watch?v=RXKyDdZhey0"
@@ -191,7 +187,6 @@
                 }
             ],
             "lenght": 6,
-            "isFavorite": false,
             "photo": "drink images/Salty_bird.png",
             "recipe": ["drink recipe step 1", "drink recipe step 1", "drink recipe step 1"],
             "link": "https://www.youtube.com/watch?v=RXKyDdZhey0"

@@ -1,7 +1,7 @@
 import Under18 from "./Under18";
 import { Dashboard } from "../Dashboard";
 import React, { useState } from "react";
-import '../../../css files/ConfirmationAge.css'
+import "../../../css files/ConfirmationAge.css";
 
 function ConfirmAge() {
   const [showConfirm, setShowConfirm] = useState(false);
@@ -25,8 +25,12 @@ function ConfirmAge() {
         <div className="confirm-window">
           <p className="paragraph-center">Are you 18 years or older?</p>
           <div className="buttons-center">
-            <button className="btn btn-success" onClick={handleYes}>Yes</button>
-            <button className="btn btn-danger" onClick={handleNo}>No</button>
+            <button className="btn btn-success" onClick={handleYes}>
+              Yes
+            </button>
+            <button className="btn btn-danger" onClick={handleNo}>
+              No
+            </button>
           </div>
         </div>
       ) : showComponent === "Dashboard" ? (
@@ -34,7 +38,12 @@ function ConfirmAge() {
       ) : showComponent === "Under18" ? (
         <Under18 />
       ) : (
-        <button className="btn btn-primary" onClick={() => setShowConfirm(true)}>Click here to confirm your age</button>
+        <button
+          className="btn btn-primary"
+          onClick={() => setShowConfirm(true)}
+        >
+          Click here to confirm your age
+        </button>
       )}
     </div>
   );

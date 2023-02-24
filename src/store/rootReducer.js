@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import ingredientsReducer from "../dashboard/redux/reducers/reducers";
 
 export const rootReducer = combineReducers({
-    ingredients: ingredientsReducer
+  ingredients: ingredientsReducer,
 });
 
-export const ApplicationState =  rootReducer;
+export const ApplicationState = rootReducer;

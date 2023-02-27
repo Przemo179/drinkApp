@@ -4,7 +4,7 @@
 // import { recipe } from "../Functional components/DrinksList";
 import SlidingPane from "react-sliding-pane";
 import "react-sliding-pane/dist/react-sliding-pane.css";
-import "../../../css files/RecipePane.css";
+import "../../styles/RecipePane.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { BsCaretLeft } from "react-icons/bs";

@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen, faTrashCan } from "@fortawesome/free-solid-svg-icons";
-import "../../../css files/IngredientList.css";
+import "../../styles/IngredientList.css";
 import { UpdateValue } from "./UpdateIngredientVolume";
 
 export const IngredientRow = ({
@@ -33,10 +33,10 @@ export const IngredientRow = ({
             {ingredient.unit}
             <span
               title="Edit"
-              onClick={(e) =>
+              onClick={(ingredientVolume) =>
                 setChangeValue({
                   id: ingredient.id,
-                  amountOf: e.target.value,
+                  amountOf: ingredientVolume.target.value,
                 })
               }
             >

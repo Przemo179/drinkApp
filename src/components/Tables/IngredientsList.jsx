@@ -1,11 +1,14 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
-import { removeIngredient, updateAmountOf } from "../../redux/actions/actions";
+import {
+  removeIngredient,
+  updateAmountOf,
+} from "../../store/redux/actions/actions";
 import { connect } from "react-redux";
-import { IngredientRow } from "../Representative components/IngredientRow";
+import { IngredientRow } from "../../cointainers/IngredientsLists/IngredientRow";
 import { Table } from "react-bootstrap";
 import { Container } from "react-bootstrap";
-import "../../../css files/IngredientList.css";
+import "../../styles/IngredientList.css";
 
 // eslint-disable-next-line react/prop-types
 const ProductsList = ({ ingredients, removeIngredient, updateAmountOf }) => {

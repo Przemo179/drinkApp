@@ -1,11 +1,11 @@
 /* eslint-disable react/react-in-jsx-scope */
 import "./App.css";
-import ConfirmAge from "./dashboard/components/Functional components/ConfirmationAge";
+import ConfirmationAge from "./cointainers/HomePage/ConfirmationAge";
 
 function App() {
   return (
     <div className="App">
-      <ConfirmAge />
+      <ConfirmationAge />
     </div>
   );
 }

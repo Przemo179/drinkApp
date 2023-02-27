@@ -2,13 +2,13 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/react-in-jsx-scope */
 import { useState } from "react";
-import data from "../../ingredientsSource/drinks.json";
-import ingredientData from "../../ingredientsSource/ingredients.json";
+import data from "../../store/ingredientsSource/drinks.json";
+import ingredientData from "../../store/ingredientsSource/ingredients.json";
 import { connect } from "react-redux";
 import { Table, Container } from "react-bootstrap";
-import { DrinkRow } from "../Representative components/DrinkRow";
-import RecipePane from "../Representative components/RecipePane";
-import "../../../css files/DrinkList.css";
+import { DrinkRow } from "../../cointainers/DrinkInformation/DrinkRow";
+import RecipePane from "../../cointainers/DrinkInformation/RecipePane";
+import "../../styles/DrinkList.css";
 
 const DrinkList = ({ ingredients }) => {
   const [dataState, setData] = useState(data);
@@ -45,11 +45,19 @@ const DrinkList = ({ ingredients }) => {
   let filteredData = [];
   let missingIngredients = [];
 
-  for (let i = 0; i < dataState.drinksList.length; i++) {
-    let currentDrink = dataState.drinksList[i];
+  for (
+    let drinkIndex = 0;
+    drinkIndex < dataState.drinksList.length;
+    drinkIndex++
+  ) {
+    let currentDrink = dataState.drinksList[drinkIndex];
     let drinkIngredients = [];
-    for (let j = 0; j < currentDrink.composition.length; j++) {
-      let currentIng = currentDrink.composition[j];
+    for (
+      let compositionIndex = 0;
+      compositionIndex < currentDrink.composition.length;
+      compositionIndex++
+    ) {
+      let currentIng = currentDrink.composition[compositionIndex];
       let match = ingredients.find(
         (drink) =>
           drink.label === currentIng.ingredient &&
@@ -59,7 +67,7 @@ const DrinkList = ({ ingredients }) => {
         drinkIngredients.push(currentIng);
       } else {
         let missingIndex = missingIngredients.findIndex(
-          (i) => i.name === currentDrink.name
+          (drink) => drink.name === currentDrink.name
         );
         if (missingIndex !== -1) {
           missingIngredients[missingIndex].ingredients.push(currentIng);
@@ -84,19 +92,19 @@ const DrinkList = ({ ingredients }) => {
       : setFavoriteDrinks([...favoriteDrinks, drinkName]);
   };
 
-  const selectFilter = (e) => {
-    if (e === "alphabetically") {
+  const selectFilter = (inputWithChoosenFilter) => {
+    if (inputWithChoosenFilter === "alphabetically") {
       setData(data);
       setChoosenFilter("alphabetically");
-    } else if (e === "inDescendingOrder") {
+    } else if (inputWithChoosenFilter === "inDescendingOrder") {
       setData(data);
       setChoosenFilter("inDescendingOrder");
-    } else if (e === "crescively") {
+    } else if (inputWithChoosenFilter === "crescively") {
       setData(data);
       setChoosenFilter("crescively");
-    } else if (e === "searchedIngredient") {
+    } else if (inputWithChoosenFilter === "searchedIngredient") {
       setChoosenFilter("searchedIngredient");
-    } else if (e === "favoriteList") {
+    } else if (inputWithChoosenFilter === "favoriteList") {
       setData(data);
       setChoosenFilter("favoriteList");
     } else {
@@ -106,8 +114,12 @@ const DrinkList = ({ ingredients }) => {
   };
 
   const arrList = [];
-  for (let i = 0; i < dataState.drinksList.length; i++) {
-    let currentDrink = dataState.drinksList[i];
+  for (
+    let drinkIndex = 0;
+    drinkIndex < dataState.drinksList.length;
+    drinkIndex++
+  ) {
+    let currentDrink = dataState.drinksList[drinkIndex];
     if (
       currentDrink.composition.some(
         (drink) => drink.ingredient === selectedIngredient
@@ -116,9 +128,7 @@ const DrinkList = ({ ingredients }) => {
       arrList.push(currentDrink);
     }
   }
-  const selectIngredient = (e) => {
-    setSelectedIngredient(e);
-  };
+
   if (showFullList) {
     return (
       <Container className="drinkList-active tableOfDrinks">
@@ -152,7 +162,9 @@ const DrinkList = ({ ingredients }) => {
               <select
                 className="form-select form-select-lg mb-3"
                 aria-label=".form-select-lg example"
-                onChange={(e) => selectIngredient(e.target.value)}
+                onChange={(ingredient) =>
+                  setSelectedIngredient(ingredient.target.value)
+                }
               >
                 {ingredientData.ingredientsList.map((iName) => {
                   return <option value={iName.label}>{iName.label}</option>;
@@ -328,7 +340,7 @@ const DrinkList = ({ ingredients }) => {
                   })
               : dataState.drinksList.map((drink, id) => {
                   const filteredDrink = filteredData.find(
-                    (i) => i.name === drink.name
+                    (filteredDrink) => filteredDrink.name === drink.name
                   );
                   const missingIng = missingIngredients.find(
                     (missingDrink) => missingDrink.name === drink.name
@@ -369,7 +381,9 @@ const DrinkList = ({ ingredients }) => {
               <select
                 className="form-select form-select-lg mb-3"
                 aria-label=".form-select-lg example"
-                onChange={(e) => selectIngredient(e.target.value)}
+                onChange={(ingredient) =>
+                  setSelectedIngredient(ingredient.target.value)
+                }
               >
                 {ingredientData.ingredientsList.map((iName) => {
                   return <option value={iName.label}>{iName.label}</option>;

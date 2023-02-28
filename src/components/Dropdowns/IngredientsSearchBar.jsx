@@ -16,7 +16,7 @@ const IngredientsSearchBar = ({ ingredients, addIngredient }) => {
   const addSingleIngredient = () => (selectedValue) => {
     if (
       ingredients.every((ingredient) => {
-        return ingredient.label !== selectedValue[0].label;
+        return ingredient.label !== selectedValue.label;
       })
     ) {
       addIngredient({

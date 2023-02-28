@@ -1,15 +1,9 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
 In the project directory, you can run:
-
-### `npm start`
+# npm start
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
 
 Drink helper is application dedicated to help user with creating drinks. After run app first what user see is age checking, after failing test user will be moved to page for under 18 people. When customer pass test, page shows correct view.
 
@@ -20,3 +14,74 @@ After add ingredient, it store in redux object. And displaying below in list - l
 After prepared list of ingredient user can load drinks list with every drink - list is from bootstrap "Table" there user has posibilty to change filter for his preferences - filter window is from bootstrap "select" . Here customer can add drink to favorite and filter by it. After clicking in choosen drink, page will show recipe. Recipe pane is created with library "SlidingPane"
 
 Icons used I took from Fontawesome and React-icons.
+
+# Folder Layout:
+  src
+    |
+    --cointainers
+                  |
+                  --DrinkInformation
+                                    |
+                                    --DrinkRow.jsx--
+                                    --RecipePane.jsx--
+                  |
+                  --HomePage
+                            |
+                            --ConfirmationAge.jsx--
+                            --Dashboard.jsx--
+                  |
+                  --IngredientsList
+                                  |
+                                  --IngredientRow.jsx--
+                                  --UpdateIngredientVolume.jsx--
+    |
+    --components
+              |
+              --Dropdowns
+                        |
+                        --IngredientsSearchBar.jsx--
+              |
+              --Tables
+                      |
+                      --DrinkList.jsx--
+                      IngredientsList.jsx--
+              |
+              --Under18.jsx-- (this page is still in progress, I'm thinking what can I put for "younger audience")
+    |
+    --images
+            |
+            --back_3.png--
+    |
+    --store
+          |
+          --ingredientsSource
+                            |
+                            --drinks.json--
+                            --ingredients.json--
+          |
+          --redux
+                |
+                --actions
+                        |
+                        --actions.js--
+                --constants
+                          |
+                          --constants.js--
+                --reducers
+                          |
+                          --reducers.js--
+          |
+          --types
+                |
+                --types.js--
+          |
+          --rootReducer.js--
+          --store.js--
+    |
+    --styles
+            |
+            --ConfirmationAge.css--
+            --Dashboard.css--
+            --DrinkList.css--
+            --IngredientList.css-
+            --RecipePane.css--

@@ -4,7 +4,7 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-
+# What is Drink Helper
 Drink helper is application dedicated to help user with creating drinks. After run app first what user see is age checking, after failing test user will be moved to page for under 18 people. When customer pass test, page shows correct view.
 
 First component has Input, this input is "Typehead" from bootstrap. I used it beacuse user now can't type wrong ingredient name then it's in .json file with ingredient list.
@@ -17,6 +17,7 @@ Icons used I took from Fontawesome and React-icons.
 
 # Folder Layout:
   src
+  
     |
     --cointainers
                   |

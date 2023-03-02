@@ -246,6 +246,7 @@ const DrinkList = ({ ingredients }) => {
                     );
                     return (
                       <DrinkRow
+                        key={id}
                         id={id}
                         currentDrink={drink}
                         currentDrinkLenght={drink.lenght}
@@ -277,6 +278,7 @@ const DrinkList = ({ ingredients }) => {
                     );
                     return (
                       <DrinkRow
+                        key={id}
                         id={id}
                         currentDrink={drink}
                         currentDrinkLenght={drink.lenght}
@@ -300,6 +302,7 @@ const DrinkList = ({ ingredients }) => {
                   );
                   return (
                     <DrinkRow
+                      key={id}
                       id={id}
                       currentDrink={drink}
                       currentDrinkLenght={drink.lenght}
@@ -325,6 +328,7 @@ const DrinkList = ({ ingredients }) => {
                     );
                     return (
                       <DrinkRow
+                        key={id}
                         id={id}
                         currentDrink={drink}
                         currentDrinkLenght={drink.lenght}
@@ -347,6 +351,7 @@ const DrinkList = ({ ingredients }) => {
                   );
                   return (
                     <DrinkRow
+                      key={id}
                       id={id}
                       currentDrink={drink}
                       currentDrinkLenght={drink.lenght}
@@ -356,7 +361,7 @@ const DrinkList = ({ ingredients }) => {
                       missingIngredients={missingIng.ingredients}
                       showRecipe={showRecipe}
                       addToFavorite={addToFavorite}
-                      isFavorite={drink.isFavorite}
+                      isFavorite={favoriteDrinks.includes(drink.name)}
                     />
                   );
                 })}

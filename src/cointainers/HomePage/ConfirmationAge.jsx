@@ -17,6 +17,7 @@ function ConfirmAge() {
   const handleNo = () => {
     setShowConfirm(false);
     setShowComponent("Under18");
+    setDisplay("confirmationBlock-under18");
   };
 
   return (

@@ -1,0 +1,142 @@
+.container {
+  margin-top: 5%;
+  margin-bottom: 2%;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  color: #ced4da;
+}
+
+.container h1 {
+  text-align: center;
+  margin-top: 0%;
+}
+
+.container h2 {
+  margin-top: 5%;
+  margin-bottom: 2%;
+  text-align: center;
+}
+
+.container-ping {
+  color: rgb(255, 0, 242);
+
+  text-shadow: 
+    0 0 40px rgb(255, 0, 242),
+    0 0 60px rgb(255, 0, 242),
+    0 0 75px rgb(255, 0, 242),
+    0 0 90px rgb(255, 0, 242),
+    0 0 100px rgb(255, 0, 242);
+}
+
+.container-orange {
+  color: orange;
+
+  text-shadow: 
+    0 0 40px rgb(255,165,0),
+    0 0 60px rgb(255,165,0),
+    0 0 75px rgb(255,165,0),
+    0 0 90px rgb(255,165,0),
+    0 0 100px rgb(255,165,0);
+    
+}
+
+.board-container {
+  display: flex;
+}
+
+.cell-on {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: rgb(255,165,0);
+
+  border: none;
+  margin: 20px;
+
+  box-shadow: 
+    0 0 20px rgb(255,165,0),
+    0 0 40px rgb(255,165,0);
+}
+
+.cell-on:hover {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: rgb(255, 115, 0);
+
+  border: none;
+  margin: 20px;
+
+  box-shadow: 
+    0 0 20px rgb(255, 115, 0),
+    0 0 40px rgb(255, 115, 0);
+}
+
+
+.cell-off {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: none;
+  margin: 20px;
+  background-color: #ced4da;
+  opacity: 0.5;
+}
+
+.cell-off:hover {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+
+  border: none;
+  margin: 20px;
+  background-color: #ced4da;
+  opacity: 1;
+}
+
+
+.container-game {
+  margin: 0% 5% 10% 5%;
+  cursor: pointer;
+  display:flex;
+  flex-direction: column;
+}
+
+.container-game-mobile {
+  cursor: pointer;
+  display:flex;
+  flex-direction: column;
+  border: 2px solid #ced4da;
+  border-radius: 20px;
+  
+  box-shadow: 
+   0 0 20px #ced4da,
+   0 0 30px #ced4da ;
+   margin-top: 5%;
+}
+
+.board-row {
+  display: flex; 
+  justify-content: space-evenly;
+  width: auto;
+  margin-bottom: 1%;
+}
+
+.board-hasWon {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+    font-family: 'Bungee Outline', cursive;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+    padding: 0 20px;
+
+    text-shadow: 
+        0 0 20px #ced4da,
+        0 0 30px #ced4da,
+        0 0 40px #ced4da;
+}

@@ -1,20 +1,32 @@
-body {
+.confirmationBlock {
     margin: 0.3% 1% 0.5% 1%;
-    background-image: url('../images/back_3.jpg');
+    background: rgb(206,212,218);
+    background: linear-gradient(140deg, rgba(206,212,218,1) 0%, rgba(33,37,41,0.01) 10%, rgba(33,37,41,1) 100%);
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
-  }
-
-.confirmationBlock {
     display: flex;
-    height: 100vh;
     align-items: center;
     justify-content: center;
 }
 
 .confirmationBlock-displayBlock {
+    background-image: url('../images/back_3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
     display: block;
+    height: 150vh;
+}
+
+.confirmationBlock-under18 {
+    background: rgb(206,212,218);
+    background: linear-gradient(90deg, rgba(206,212,218,1) 0%, rgba(33,37,41,1) 3%, rgba(33,37,41,1) 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 150vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .confirm-window {

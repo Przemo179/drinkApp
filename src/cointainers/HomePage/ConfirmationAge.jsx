@@ -1,6 +1,6 @@
 import Under18 from "../../components/Under18";
 import { Dashboard } from "./Dashboard";
-import React, { useState } from "react";
+import { useState } from "react";
 import "../../styles/ConfirmationAge.css";
 
 function ConfirmAge() {
@@ -17,6 +17,7 @@ function ConfirmAge() {
   const handleNo = () => {
     setShowConfirm(false);
     setShowComponent("Under18");
+    setDisplay("confirmationBlock-under18");
   };
 
   return (
